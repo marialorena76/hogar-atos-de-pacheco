@@ -1,0 +1,10 @@
+[07-Feb-2026 07:01:43 UTC] PHP Warning:  Undefined array key "name" in /home/chbdpmrs/public_html/sendmail.php on line 3
+[07-Feb-2026 07:01:43 UTC] PHP Warning:  Undefined array key "email" in /home/chbdpmrs/public_html/sendmail.php on line 5
+[07-Feb-2026 07:01:43 UTC] PHP Warning:  Undefined array key "message" in /home/chbdpmrs/public_html/sendmail.php on line 6
+[07-Feb-2026 07:01:43 UTC] PHP Warning:  Undefined array key "subject" in /home/chbdpmrs/public_html/sendmail.php on line 7
+[07-Feb-2026 07:01:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/chbdpmrs/public_html/class.phpmailer.php on line 1246
+[17-Feb-2026 12:05:02 UTC] PHP Warning:  Undefined array key "name" in /home/chbdpmrs/public_html/sendmail.php on line 3
+[17-Feb-2026 12:05:02 UTC] PHP Warning:  Undefined array key "email" in /home/chbdpmrs/public_html/sendmail.php on line 5
+[17-Feb-2026 12:05:02 UTC] PHP Warning:  Undefined array key "message" in /home/chbdpmrs/public_html/sendmail.php on line 6
+[17-Feb-2026 12:05:02 UTC] PHP Warning:  Undefined array key "subject" in /home/chbdpmrs/public_html/sendmail.php on line 7
+[17-Feb-2026 12:05:02 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/chbdpmrs/public_html/class.phpmailer.php on line 1246
