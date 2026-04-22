@@ -9724,3 +9724,178 @@ section.ftco-section.videos {
 .btn-transparent:hover {
   color: #fff;
 }
+
+/* =====================================================
+   FULL-WIDTH MODERN IMPROVEMENTS
+   ===================================================== */
+
+/* Wider content container */
+.container {
+  max-width: 1400px;
+}
+
+/* Taller hero on large screens */
+@media (min-width: 992px) {
+  .hero-wrap,
+  .hero-wrap .slider-text {
+    height: 600px;
+  }
+}
+
+/* Modern counter cards */
+.ftco-counter .block-18 {
+  border-radius: 14px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ftco-counter .block-18:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12) !important;
+}
+
+/* Modern call-to-action card */
+.cta-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 3.5rem 4rem;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.cta-card q {
+  display: block;
+  font-size: 1.1rem;
+  margin: 1.25rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #03a9f4;
+  background: rgba(3,169,244,0.04);
+  border-radius: 0 8px 8px 0;
+}
+.cta-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.cta-card .btn {
+  padding: .75rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 40px;
+  margin-top: .5rem;
+}
+
+/* Section accent bar */
+.section-accent-bar {
+  width: 60px;
+  height: 4px;
+  background: #03a9f4;
+  border-radius: 2px;
+  margin: 1rem auto 2rem;
+}
+
+/* =====================================================
+   HOGAR ALTOS DEL VALLE SECTION
+   ===================================================== */
+
+.hogar-valle-section {
+  background: #f0f7ff;
+  padding: 5% 0;
+  position: relative;
+  z-index: 0;
+}
+
+.hogar-valle-section .section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.82);
+  font-family: "Zapfino", "Playfair Display", serif;
+}
+
+.hogar-valle-section .section-lead {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.hogar-valle-section .video-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+}
+
+.hogar-valle-section .video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 430px;
+  object-fit: cover;
+}
+
+.hogar-valle-section .valle-form-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+  height: 100%;
+}
+
+.hogar-valle-section .valle-form-card h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgba(0,0,0,0.85);
+  font-family: "Poppins", Arial, sans-serif;
+  margin-bottom: 1.75rem;
+}
+
+.hogar-valle-section .form-control {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: .75rem 1.1rem;
+  font-size: 15px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  background: #fafafa;
+}
+
+.hogar-valle-section .form-control:focus {
+  border-color: #03a9f4;
+  box-shadow: 0 0 0 3px rgba(3,169,244,.15);
+  outline: none;
+  background: #fff;
+}
+
+.hogar-valle-section #contact-submit-valle {
+  width: 100%;
+  padding: .85rem;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 40px;
+  letter-spacing: .02em;
+}
+
+.hogar-valle-section #mail-success-valle {
+  color: #28a745;
+  background: rgba(40,167,69,.09);
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  display: none;
+}
+
+.hogar-valle-section #mail-fail-valle {
+  color: #dc3545;
+  background: rgba(220,53,69,.09);
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .cta-card {
+    padding: 2rem 1.5rem;
+  }
+  .hogar-valle-section .video-wrapper {
+    margin-bottom: 2rem;
+  }
+}

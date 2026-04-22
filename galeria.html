@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -42,63 +42,150 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/theme.css">
   </head>
   <body>
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Altos de Pacheco<span>.</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-
-                <div class="collapse navbar-collapse" id="ftco-nav">
+	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item "><a href="index.html" class="nav-link">Inicio</a></li>
-	          <li class="nav-item "><a href="about.html" class="nav-link">Actividades</a></li>
+	          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">Actividades</a></li>
 	          <li class="nav-item active"><a href="galeria.html" class="nav-link">Galería</a></li>
 	          <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
-	          <li class="nav-item "><a href="contact.html" class="nav-link">Contacto</a></li>
+	          <li class="nav-item"><a href="valle.html" class="nav-link">Altos del Valle</a></li>
+	          <li class="nav-item nav-cta"><a href="contact.html" class="nav-link">Contacto</a></li>
 	        </ul>
-	      </div>	    </div>
+	      </div>
+	    </div>
 	  </nav>
     <!-- END nav -->
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/topbanner/mural3.jpg');">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
-          <div class="col-md-9 ftco-animate pb-5 text-center">
-            <h1 class="mb-3 bread">Galería</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>Galería <i class="ion-ios-arrow-forward"></i></span></p>
+    <section class="hero-wrap hero-wrap-galeria" style="background-image: url('images/topbanner/mural3.jpg');">
+      <div class="galeria-overlay"></div>
+      <div class="container h-100">
+        <div class="row no-gutters h-100 align-items-center justify-content-center">
+          <div class="col-md-10 text-center galeria-hero-content ftco-animate">
+            <span class="galeria-eyebrow">Hogar Altos de Pacheco</span>
+            <h1 class="galeria-title">Galería</h1>
+            <div class="galeria-divider"></div>
+            <p class="galeria-subtitle">Momentos, actividades y la vida cotidiana de nuestro hogar</p>
+            <p class="galeria-breadcrumbs">
+              <a href="index.html">Inicio</a>
+              <span class="galeria-sep">&#8594;</span>
+              <span>Galería</span>
+            </p>
           </div>
         </div>
       </div>
     </section>
 
 
-<!-- Start Portfolio Section
-		=========================================== -->
-		
-		<section class="portfolio section-sm" id="portfolio">
-			<div class="container-fluid">
-				<div class="row " >
-					<div class="col-lg-12" data-aos="fade-up">
-					<h2 class="mb-4"><span>Una imagen vale más que mil palabras.</span></h2>
-                                        <div class="border"></div>
-                                            
-						<div class="portfolio-filter">
-							<button type="button" data-filter="all">Todas</button>
-							<button type="button" data-filter=".abuelos">Abuelos</button>
-							<button type="button" data-filter=".instalaciones">Instalaciones</button>
-							<button type="button" data-filter=".actividades">Actividades</button>
-						</div>
+<!-- Start Gallery Section -->
+		<section class="galeria-section" id="portfolio">
+			<div class="container">
 
-						
+        <!-- SECCIÓN 1: NUESTRO HOGAR -->
+        <div class="galeria-bloque">
+          <div class="galeria-bloque-header">
+            <h2 class="galeria-bloque-titulo">Nuestro Hogar</h2>
+            <div class="galeria-divider"></div>
+            <p class="galeria-bloque-sub">Las instalaciones y espacios de Altos de Pacheco</p>
+          </div>
+          <div class="owl-carousel owl-carousel-hogar owl-theme">
+            <div class="galeria-item"><a href="images/galeria/DSC_7376.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7376.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7377.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7377.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7378.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7378.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7379.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7379.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7380.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7380.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7381.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7381.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7382.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7382.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7383.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7383.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7386.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7386.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7387.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7387.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7389.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7389.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7390.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7390.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7392.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7392.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7393.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7393.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7396.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7396.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7397.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7397.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7399-Edit.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7399-Edit.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7405.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7405.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7406.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7406.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7409.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7409.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7411.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7411.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7412.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7412.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7414.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7414.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7417.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7417.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7419.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7419.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7420.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7420.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7422.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7422.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7425.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7425.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7430.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7430.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7432.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7432.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7441.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7441.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7446.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7446.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7449.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7449.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7455.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7455.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7457.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7457.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7460.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7460.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7467.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7467.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7472.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7472.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7474.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7474.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/DSC_7476.jpg" data-lightbox="hogar"><img src="images/galeria/DSC_7476.jpg" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_1.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_1.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_2.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_2.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_16.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_16.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_17.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_17.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_18.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_18.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_19.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_19.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_20.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_20.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_22.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_22.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_23.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_23.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_24.JPG" data-lightbox="hogar"><img src="images/galeria/galeria_24.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/4.JPG" data-lightbox="hogar"><img src="images/galeria/4.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/5.JPG" data-lightbox="hogar"><img src="images/galeria/5.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/6.JPG" data-lightbox="hogar"><img src="images/galeria/6.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/7.JPG" data-lightbox="hogar"><img src="images/galeria/7.JPG" alt=""></a></div>
+          </div>
+        </div>
 
-					
-						<div class="portfolio-items-wrapper">
+        <!-- SECCIÓN 2: NUESTROS ABUELOS -->
+        <div class="galeria-bloque galeria-bloque-dark">
+          <div class="galeria-bloque-header">
+            <h2 class="galeria-bloque-titulo">Nuestros Abuelos</h2>
+            <div class="galeria-divider"></div>
+            <p class="galeria-bloque-sub">Momentos y actividades de la vida en el hogar</p>
+          </div>
+          <div class="owl-carousel owl-carousel-abuelos owl-theme">
+            <div class="galeria-item"><a href="images/galeria/galeria_4.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_4.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_5.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_5.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_8.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_8.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_9.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_9.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_10.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_10.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_12.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_12.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_3.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_3.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_6.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_6.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_7.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_7.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_11.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_11.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_13.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_13.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_14.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_14.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_15.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_15.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_21.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_21.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_25.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_25.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_26.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_26.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_28.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_28.JPG" alt=""></a></div>
+            <div class="galeria-item"><a href="images/galeria/galeria_29.JPG" data-lightbox="abuelos"><img src="images/galeria/galeria_29.JPG" alt=""></a></div>
+          </div>
+        </div>
+
+        <div style="display:none"><div class="portfolio-items-wrapper">
 							<div class="row">
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="0">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_1.JPG" alt="">
 							    		<div class="caption">
@@ -109,7 +196,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-							   <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="100">
+							   <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_2.JPG" alt="">
 							    		<div class="caption">
@@ -120,7 +207,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_3.JPG" alt="">
 							    		<div class="caption">
@@ -131,7 +218,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos" data-aos="fade-up" data-aos-delay="300">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_4.JPG" alt="">
 							    		<div class="caption">
@@ -143,7 +230,7 @@
 							    	</div>
 							    </div>
                                                             
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="0">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/4.JPG" alt="">
 							    		<div class="caption">
@@ -155,7 +242,7 @@
 							    	</div>
 							    </div>
                                                              
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="100">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_6.JPG" alt="">
 							    		<div class="caption">
@@ -166,7 +253,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_7.JPG" alt="">
 							    		<div class="caption">
@@ -177,7 +264,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos" data-aos="fade-up" data-aos-delay="300">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_8.JPG" alt="">
 							    		<div class="caption">
@@ -189,7 +276,7 @@
 							    	</div>
 							    </div>
                                                             
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="0">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/5.JPG" alt="">
 							    		<div class="caption">
@@ -200,7 +287,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos" data-aos="fade-up" data-aos-delay="100">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_9.JPG" alt="">
 							    		<div class="caption">
@@ -212,7 +299,7 @@
 							    	</div>
 							    </div>
                                                             
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_10.JPG" alt="">
 							    		<div class="caption">
@@ -223,7 +310,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="300">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_11.JPG" alt="">
 							    		<div class="caption">
@@ -234,7 +321,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos" data-aos="fade-up" data-aos-delay="0">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_12.JPG" alt="">
 							    		<div class="caption">
@@ -245,7 +332,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="100">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_13.JPG" alt="">
 							    		<div class="caption">
@@ -258,7 +345,7 @@
 							    </div>
                                                             
                                                             
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_14.JPG" alt="">
 							    		<div class="caption">
@@ -269,7 +356,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="300">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_15.JPG" alt="">
 							    		<div class="caption">
@@ -280,7 +367,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="0">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_16.JPG" alt="">
 							    		<div class="caption">
@@ -291,7 +378,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="100">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/7.JPG" alt="">
 							    		<div class="caption">
@@ -302,7 +389,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_17.JPG" alt="">
 							    		<div class="caption">
@@ -313,7 +400,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="300">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_18.JPG" alt="">
 							    		<div class="caption">
@@ -325,7 +412,7 @@
 							    	</div>
 							    </div> 
                                                             
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="0">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_19.JPG" alt="">
 							    		<div class="caption">
@@ -337,7 +424,7 @@
 							    	</div>
 							    </div> 
                                                             
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="100">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_20.JPG" alt="">
 							    		<div class="caption">
@@ -348,7 +435,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_21.JPG" alt="">
 							    		<div class="caption">
@@ -359,7 +446,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="300">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_22.JPG" alt="">
 							    		<div class="caption">
@@ -370,7 +457,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos" data-aos="fade-up" data-aos-delay="0">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix abuelos">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_5.JPG" alt="">
 							    		<div class="caption">
@@ -381,7 +468,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="100">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_23.JPG" alt="">
 							    		<div class="caption">
@@ -392,7 +479,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="200">
+                                                             <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_24.JPG" alt="">
 							    		<div class="caption">
@@ -403,7 +490,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones" data-aos="fade-up" data-aos-delay="300">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/6.JPG" alt="">
 							    		<div class="caption">
@@ -414,7 +501,7 @@
 							    		</div>
 							    	</div>
 							    </div>
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="0">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_25.JPG" alt="">
 							    		<div class="caption">
@@ -425,7 +512,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="100">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_26.JPG" alt="">
 							    		<div class="caption">
@@ -436,7 +523,7 @@
 							    		</div>
 							    	</div>
 							    </div> 
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="200">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_28.JPG" alt="">
 							    		<div class="caption">
@@ -448,30 +535,61 @@
 							    	</div>
 							    </div> 
                                                         
-                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades" data-aos="fade-up" data-aos-delay="300">
+                                                            <div class="col-md-3 col-sm-6 col-xs-6 mix actividades">
 							    	<div class="portfolio-block">
 								    	<img class="img-responsive" src="images/galeria/galeria_29.JPG" alt="">
 							    		<div class="caption">
 							    			<a class="search-icon" href="images/galeria/galeria_29.JPG" data-lightbox="image-1">
 							    				<i class="tf-ion-ios-search-strong"></i>
 								    		</a>
-							    			<!-- <h6><a href="">aaa</a></h4> -->
 							    		</div>
 							    	</div>
-							    </div> 
-                                                            
-                                                            
-                                                            
-                                                            
-							</div>
-						</div>
-						
-					</div> <!-- /end col-lg-12 -->
-                
-				</div> <!-- end row -->
-                                <div class="row back"><a href="#portfolio" class="btn btn-primary">SUBIR</a></div>
-			</div>	<!-- end container -->
-		</section>   <!-- End section -->
+							    </div>
+							    <!-- Fotos nuevas 2025 -->
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7376.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7376.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7377.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7377.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7378.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7378.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7379.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7379.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7380.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7380.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7381.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7381.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7382.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7382.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7383.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7383.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7386.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7386.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7387.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7387.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7389.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7389.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7390.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7390.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7392.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7392.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7393.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7393.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7396.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7396.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7397.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7397.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7399-Edit.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7399-Edit.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7405.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7405.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7406.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7406.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7409.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7409.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7411.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7411.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7412.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7412.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7414.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7414.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7417.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7417.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7419.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7419.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7420.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7420.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7422.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7422.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7425.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7425.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7430.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7430.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7432.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7432.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7441.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7441.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7446.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7446.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7449.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7449.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7455.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7455.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7457.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7457.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7460.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7460.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7467.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7467.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7472.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7472.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7474.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7474.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+							    <div class="col-md-3 col-sm-6 col-xs-6 mix instalaciones"><div class="portfolio-block"><img class="img-responsive" src="images/galeria/DSC_7476.jpg" alt=""><div class="caption"><a class="search-icon" href="images/galeria/DSC_7476.jpg" data-lightbox="image-1"><i class="tf-ion-ios-search-strong"></i></a></div></div></div>
+
+							</div></div>
+		</div>
+		</section>
                 
               
     <footer class="ftco-footer ftco-footer-2 ftco-section">
@@ -479,7 +597,7 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2" >Altos de Pacheco</h2>
+              <h2 class="ftco-heading-2" style="color:#03a9f4;" >Altos de Pacheco</h2>
               <p>Altos de Pacheco es una institución geriátrica dedicada al cuidado y atención de los Adultos Mayores, ubicado en General Pacheco, Partido de Tigre.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -524,15 +642,10 @@
         </div>
       </div>
     </footer>
-    <a  href="https://wa.me/5491155039462" target="_blank"><span></span>
-        <img class="whatsapp" src="images/whatsapp-circle.png" alt="Escribir al WhatsApp">
-    </a>  <style>
-    .whatsapp {
-    position: fixed !important;
-    bottom: 20px;
-    right: 20px;
-    
-}
+    <a href="https://wa.me/5491155039462" target="_blank" class="whatsapp-float" aria-label="Escribir por WhatsApp">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <style>
 </style>
     
   
@@ -568,9 +681,35 @@
        <!-- Smooth Scroll js -->
     <script src="plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
     
-    <script src="js/main.js"></script>    
+    <script src="js/main.js"></script>
         <!-- Custom js -->
     <script src="js/script.js"></script>
-    
+    <script src="js/theme.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.owl-carousel-hogar').owlCarousel({
+          loop: true,
+          margin: 0,
+          nav: true,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 3500,
+          autoplayHoverPause: true,
+          navText: ['&#8592;','&#8594;'],
+          responsive: { 0:{items:1}, 576:{items:2}, 992:{items:3}, 1200:{items:4} }
+        });
+        $('.owl-carousel-abuelos').owlCarousel({
+          loop: true,
+          margin: 0,
+          nav: true,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 4000,
+          autoplayHoverPause: true,
+          navText: ['&#8592;','&#8594;'],
+          responsive: { 0:{items:1}, 576:{items:2}, 992:{items:3}, 1200:{items:4} }
+        });
+      });
+    </script>
   </body>
 </html>
