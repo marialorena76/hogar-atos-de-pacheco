@@ -1,0 +1,13 @@
+# Videos
+images/actividades/*.mp4
+images/actividades/*.ogv
+images/actividades/*.WebM
+images/actividades/*.webm
+
+# Archivos viejos
+_old2019/
+_old2019.zip
+
+# Sistema
+.DS_Store
+.claude/
