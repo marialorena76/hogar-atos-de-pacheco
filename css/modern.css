@@ -1,0 +1,604 @@
+/* ============================================================
+   modern.css — Rediseño visual Altos de Pacheco
+   Paleta: verde salvia #4a7c59 · beige #f5f0e8 · blanco #fff
+   Tipografía: Inter (Google Fonts)
+   ============================================================ */
+
+:root {
+  --brand:    #4a7c59;
+  --brand-dk: #3a6347;
+  --brand-lt: #e8f0eb;
+  --beige:    #f5f0e8;
+  --white:    #ffffff;
+  --text:     #2c2c2c;
+  --muted:    #6b7280;
+  --border:   #e2ddd6;
+  --dark-bg:  #1e2d25;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.09), 0 2px 6px rgba(0,0,0,.05);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
+  --radius:   12px;
+  --ease:     .3s ease;
+}
+
+/* ================================================================
+   TIPOGRAFÍA — Inter en absolutamente todo
+   ================================================================ */
+body,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+p, a, li, span, button, input, textarea, select,
+.navbar, .nav-link, .btn, .form-control,
+.ftco-footer, .heading-section, .ftco-counter {
+  font-family: "Inter", Arial, sans-serif !important;
+}
+
+body {
+  background: var(--beige);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.3;
+}
+h1, .h1 { font-size: 52px; font-weight: 700; }
+h2, .h2 { font-size: 38px; font-weight: 700; }
+h3, .h3 { font-size: 26px; font-weight: 700; }
+p { font-size: 18px; color: #2c2c2c; }
+
+a {
+  color: var(--brand);
+  transition: color var(--ease);
+}
+a:hover, a:focus {
+  color: var(--brand-dk);
+  text-decoration: none;
+}
+
+/* ================================================================
+   NAVBAR — blanco, texto oscuro, borde inferior sutil
+   ================================================================ */
+.ftco-navbar-light {
+  background: var(--white) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 1px 8px rgba(0,0,0,.06) !important;
+  transition: box-shadow var(--ease);
+}
+
+@media (max-width: 991.98px) {
+  .ftco-navbar-light {
+    background: var(--white) !important;
+  }
+  .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    color: var(--text) !important;
+  }
+}
+
+/* Nombre/logo en verde salvia */
+.ftco-navbar-light .navbar-brand,
+.navbar-brand {
+  color: var(--brand) !important;
+  font-weight: 700 !important;
+}
+.ftco-navbar-light .navbar-brand:hover,
+.ftco-navbar-light .navbar-brand:focus {
+  color: var(--brand-dk) !important;
+}
+
+/* Links de nav — texto oscuro */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: var(--text) !important;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 18px 16px;
+  position: relative;
+}
+
+/* Subrayado verde animado */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 16px; right: 16px;
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform .25s ease;
+}
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+  color: var(--brand) !important;
+}
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover::after,
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link::after {
+  transform: scaleX(1);
+}
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link {
+  color: var(--brand) !important;
+}
+
+/* Toggler oscuro */
+.ftco-navbar-light .navbar-toggler {
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+/* Scrolled — sigue blanco, sombra más pronunciada */
+.ftco-navbar-light.scrolled {
+  background: var(--white) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,.10) !important;
+  margin-top: 0 !important;
+}
+.ftco-navbar-light.scrolled .nav-link {
+  color: var(--text) !important;
+}
+.ftco-navbar-light.scrolled .nav-item.active > a {
+  color: var(--brand) !important;
+}
+
+/* ================================================================
+   SECCIONES — espaciado generoso + alternancia beige / blanco
+   ================================================================ */
+.ftco-section   { padding: 80px 0; background: var(--white); }
+.call-to-action { padding: 80px 0; background: var(--beige); }
+.call-to-action p { color: var(--text); }
+
+/* Sección contador sobre fondo beige */
+.ftco-counter,
+.ftco-section.ftco-no-pt { background: var(--beige); }
+
+/* ================================================================
+   TEXTO CONTENIDO — max-width 700px, alineación izquierda
+   ================================================================ */
+.call-to-action .container .col-md-12 {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left !important;
+}
+.call-to-action p,
+.call-to-action ul,
+.call-to-action q {
+  max-width: 700px;
+  text-align: left;
+}
+
+/* ================================================================
+   HERO — foto a color, overlay suave, Inter bold blanco
+   ================================================================ */
+.hero-wrap {
+  height: 520px;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+.hero-wrap .slider-text { height: 520px; }
+.hero-wrap .overlay {
+  opacity: .45;
+  background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.58) 100%);
+}
+
+.hero-wrap .slider-text h1,
+h1.mb-3.bread,
+h1.mb-3.bread.brand {
+  font-family: "Inter", Arial, sans-serif !important;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.01em;
+  font-size: 42px;
+}
+h1.mb-3.bread.brand { font-size: 28px; }
+
+.hero-wrap .slider-text .breadcrumbs span,
+.hero-wrap .slider-text .breadcrumbs span a {
+  color: rgba(255,255,255,.85);
+}
+span.mr-2.brand {
+  color: rgba(255,255,255,.85);
+}
+
+/* ================================================================
+   BOTONES — verde salvia, sin degradados ni celeste
+   ================================================================ */
+.btn {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border-radius: 8px !important;
+  padding: 16px 36px;
+  box-shadow: none !important;
+  transition: all var(--ease);
+}
+
+.btn.btn-primary,
+.btn.btn-primary:not(:disabled) {
+  background: var(--brand) !important;
+  border: 1.5px solid var(--brand) !important;
+  color: #fff !important;
+}
+.btn.btn-primary:hover {
+  background: var(--brand-dk) !important;
+  border-color: var(--brand-dk) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+.btn.btn-primary.btn-outline-primary {
+  background: transparent !important;
+  border-color: var(--brand) !important;
+  color: var(--brand) !important;
+}
+.btn.btn-primary.btn-outline-primary:hover {
+  background: var(--brand) !important;
+  color: #fff !important;
+}
+
+.btn-transparent {
+  background: var(--brand) !important;
+  border: 1.5px solid var(--brand) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+}
+.btn-transparent:hover {
+  background: var(--brand-dk) !important;
+  border-color: var(--brand-dk) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+/* ================================================================
+   CONTADORES
+   ================================================================ */
+.block-18 {
+  background: var(--white) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--border);
+  transition: transform var(--ease), box-shadow var(--ease);
+  padding: 2rem 1rem !important;
+}
+.block-18:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg) !important;
+}
+.ftco-counter .text strong.number {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--brand);
+}
+.ftco-counter .text span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* ================================================================
+   TARJETAS DE VIDEO
+   ================================================================ */
+.blog-entry {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform var(--ease), box-shadow var(--ease);
+  margin-bottom: 2em;
+}
+.blog-entry:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.blog-entry video { display: block; width: 100%; }
+.blog-entry .text { padding: .8rem 1rem .9rem; }
+.blog-entry .text h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.blog-entry .text .meta span { background: var(--beige); }
+
+/* ================================================================
+   SECCIÓN ABOUT / DARK
+   ================================================================ */
+.ftco-section-about .text,
+.bg-darken { background: var(--dark-bg); }
+.ftco-section-about h2 { color: #fff; }
+.ftco-section-about p { color: rgba(255,255,255,.72); }
+
+/* ================================================================
+   SIDEBAR (servicios)
+   ================================================================ */
+.sidebar-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.sidebar-box .heading { color: var(--text); }
+.about img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+/* ================================================================
+   CAJAS DE CONTACTO
+   ================================================================ */
+.contact-section .box {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  transition: transform var(--ease), box-shadow var(--ease);
+  height: 100%;
+}
+.contact-section .box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.contact-section .box .icon {
+  width: 70px; height: 70px;
+  background: var(--brand-lt) !important;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+}
+.contact-section .box .icon span {
+  color: var(--brand) !important;
+  font-size: 26px !important;
+}
+.contact-section .contact-info p a { color: var(--brand); }
+.contact-section .box h3 { color: var(--text); }
+
+/* ================================================================
+   FORMULARIO
+   ================================================================ */
+.form-control {
+  border-radius: 6px !important;
+  border: 1.5px solid var(--border) !important;
+  background: var(--white) !important;
+  color: var(--text) !important;
+  font-size: 15px !important;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+.form-control:focus,
+.form-control:active {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(74,124,89,.14) !important;
+}
+.contact-form .form-control { border-radius: 6px; }
+.contact-form #contact-submit {
+  background: var(--brand);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  transition: background var(--ease), transform var(--ease);
+}
+.contact-form #contact-submit:hover {
+  background: var(--brand-dk);
+  transform: translateY(-1px);
+}
+
+/* ================================================================
+   GALERÍA — filtros y tarjetas
+   ================================================================ */
+.portfolio-filter { margin-bottom: 48px; }
+.portfolio-filter button {
+  border-radius: 6px;
+  margin: 0 4px 8px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  transition: all var(--ease);
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  padding: 7px 22px;
+  cursor: pointer;
+}
+.portfolio-filter button:hover,
+.portfolio-filter button.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.portfolio-block {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+.portfolio-block:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.portfolio-block img { display: block; width: 100%; }
+.portfolio-block .caption .search-icon {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* Separador decorativo */
+.border {
+  height: 3px !important;
+  background: var(--brand) !important;
+  border: none !important;
+  border-radius: 2px;
+}
+
+/* ================================================================
+   HEADING SECTIONS
+   ================================================================ */
+.heading-section h2 { color: var(--text); }
+.heading-section h2 span:after {
+  background: var(--brand);
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  bottom: 3px; right: -14px;
+}
+.text-primary { color: var(--brand) !important; }
+.bg-primary    { background: var(--brand) !important; }
+.bg-secondary  { background: var(--brand) !important; }
+
+/* ================================================================
+   CITA (q) y listas de servicios
+   ================================================================ */
+q {
+  display: block;
+  background: rgba(74,124,89,.07);
+  border-left: 4px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--text);
+  font-style: italic;
+  quotes: none;
+}
+
+li.item {
+  color: var(--text) !important;
+  padding: 4px 0;
+}
+li.item::before {
+  content: '✓ ';
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.ftco-footer { background: var(--dark-bg); }
+.ftco-footer p,
+.ftco-footer a { color: rgba(255,255,255,.62); }
+.ftco-footer a:hover { color: rgba(255,255,255,.95); }
+
+.ftco-footer .ftco-heading-2,
+.ftco-footer .ftco-footer-widget h2 {
+  color: rgba(255,255,255,.42) !important;
+  font-size: 11px !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+  font-family: "Inter", Arial, sans-serif !important;
+  margin-bottom: 16px !important;
+}
+
+.ftco-footer-social li a {
+  background: rgba(255,255,255,.08) !important;
+  transition: background var(--ease), transform var(--ease);
+}
+.ftco-footer-social li a:hover {
+  background: var(--brand) !important;
+  transform: translateY(-3px);
+}
+
+/* ================================================================
+   LOADER — conservar estilos funcionales
+   ================================================================ */
+#ftco-loader { background-color: rgba(245,240,232,.95); }
+
+/* ================================================================
+   WhatsApp
+   ================================================================ */
+.whatsapp {
+  width: 54px !important;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.25));
+  transition: transform .2s ease, filter .2s ease;
+}
+.whatsapp:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.3));
+}
+
+/* ================================================================
+   IMÁGENES — border-radius 16px, sombra, hover scale
+   ================================================================ */
+img.img-responsive,
+img.img-fluid:not(.whatsapp),
+.sidebar-box img,
+#map img {
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+img.img-responsive:hover,
+img.img-fluid:not(.whatsapp):hover,
+.sidebar-box img:hover,
+#map img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+}
+/* portfolio-block: actualiza radius a 16px */
+.portfolio-block { border-radius: 16px; }
+
+/* ================================================================
+   GALERÍA — 3 columnas desktop, 2 tablet, 1 mobile; gap 20px
+   ================================================================ */
+.portfolio-items-wrapper .col-md-3 {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding: 10px;
+}
+.portfolio-items-wrapper .row {
+  margin: 0 -10px;
+}
+@media (max-width: 767.98px) {
+  .portfolio-items-wrapper .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 575.98px) {
+  .portfolio-items-wrapper .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ================================================================
+   ACTIVIDADES — grid de tarjetas
+   ================================================================ */
+.actividad-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.09), 0 2px 6px rgba(0,0,0,.05);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.actividad-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.14), 0 4px 12px rgba(0,0,0,.07);
+}
+.actividad-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.actividad-titulo {
+  font-size: 18px !important;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+}
+.actividades-grid .col-md-4 {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
