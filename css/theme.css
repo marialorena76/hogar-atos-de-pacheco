@@ -1033,9 +1033,15 @@ a > img.whatsapp,
   margin-bottom: 0 !important;
 }
 
+/* Punto decorativo azul heredado del template original (style.css), no encaja
+   con el diseño actual — se quita */
+.heading-section h2 span:after {
+  content: none !important;
+}
+
 /* Mobile: stack vertical */
 @media (max-width: 767.98px) {
-  .ftco-section-about .text,
+  .ftco-section-about .d-flex.text,
   .ftco-section-about .img {
     flex: 0 0 100% !important;
     max-width: 100% !important;
@@ -1044,7 +1050,7 @@ a > img.whatsapp,
     min-height: 280px !important;
     order: -1;
   }
-  .ftco-section-about .text {
+  .ftco-section-about .d-flex.text {
     padding: 2.5rem 1.5rem !important;
   }
 }
