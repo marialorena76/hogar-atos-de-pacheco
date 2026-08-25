@@ -118,7 +118,7 @@ a:focus {
 #ftco-navbar .navbar-brand,
 .ftco-navbar-light .navbar-brand {
   font-family: var(--font-display) !important;
-  font-size: 1.1rem !important;
+  font-size: 1.55rem !important;
   font-weight: 700 !important;
   color: var(--clr-primary-dark) !important;
   letter-spacing: -0.01em;
@@ -262,9 +262,9 @@ a:focus {
   height: auto !important;
   display: flex !important;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
-  padding: var(--sp-12) 0 var(--sp-8);
+  padding: var(--sp-12) 0 var(--sp-10);
 }
 .hero-wrap.hero-home .overlay {
   opacity: 0.55 !important;
@@ -387,6 +387,9 @@ a:focus {
   color: var(--clr-text) !important;
   font-size: 22px !important;
   line-height: 1.95;
+  max-width: 680px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Card wrapper */
@@ -1277,17 +1280,40 @@ a > img.whatsapp,
    15. HOGAR ALTOS DEL VALLE (index.html)
    ===================================================== */
 .hogar-valle-section {
-  background: var(--clr-bg-muted) !important;
+  background: var(--clr-primary) !important;
   padding: var(--sp-10) 0 !important;
 }
 .hogar-valle-section .section-heading {
   font-family: var(--font-display) !important;
-  color: var(--clr-text) !important;
+  color: var(--clr-white) !important;
   font-size: 2rem;
 }
+.hogar-valle-section .section-accent-bar {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 .hogar-valle-section .section-lead {
-  color: var(--clr-text-muted) !important;
+  color: rgba(255,255,255,0.92) !important;
   font-family: var(--font-body) !important;
+  margin: 0 0 var(--sp-3) !important;
+  max-width: 480px;
+}
+.hogar-valle-section .valle-location {
+  color: var(--clr-white) !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--sp-4) !important;
+}
+.hogar-valle-section .btn.btn-primary {
+  background: var(--clr-white) !important;
+  border-color: var(--clr-white) !important;
+  color: var(--clr-primary-dark) !important;
+}
+.hogar-valle-section .btn.btn-primary:hover {
+  background: var(--clr-accent-light) !important;
+  border-color: var(--clr-accent-light) !important;
+  color: var(--clr-primary-dark) !important;
 }
 .valle-video-card {
   border-radius: var(--radius-md);

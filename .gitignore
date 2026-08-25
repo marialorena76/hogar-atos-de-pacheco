@@ -1,8 +1,11 @@
-# Videos
-images/actividades/*.mp4
-images/actividades/*.ogv
-images/actividades/*.WebM
-images/actividades/*.webm
+# Imágenes y videos pesados (se suben directo al hosting, no al repo)
+images/
+*.mp4
+*.ogv
+*.WebM
+*.webm
+*.mov
+*.avi
 
 # Archivos viejos
 _old2019/
