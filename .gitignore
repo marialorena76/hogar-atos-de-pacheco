@@ -1,5 +1,4 @@
-# Imágenes y videos pesados (se suben directo al hosting, no al repo)
-images/
+# Videos
 *.mp4
 *.ogv
 *.WebM
