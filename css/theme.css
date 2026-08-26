@@ -256,6 +256,7 @@ a:focus {
   height: auto !important;
   display: flex;
   align-items: center;
+  background-position: center bottom !important;
 }
 .hero-wrap.hero-home .slider-text {
   min-height: 90vh !important;
