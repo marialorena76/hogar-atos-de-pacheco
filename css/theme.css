@@ -118,11 +118,13 @@ a:focus {
 #ftco-navbar .navbar-brand,
 .ftco-navbar-light .navbar-brand {
   font-family: var(--font-display) !important;
-  font-size: 1.55rem !important;
+  font-size: 1.3rem !important;
   font-weight: 700 !important;
   color: var(--clr-primary-dark) !important;
   letter-spacing: -0.01em;
   padding: var(--sp-2) 0 !important;
+  display: inline-flex !important;
+  align-items: center;
 }
 #ftco-navbar .navbar-brand:hover,
 .ftco-navbar-light .navbar-brand:hover {
@@ -131,6 +133,20 @@ a:focus {
 }
 #ftco-navbar .navbar-brand span {
   color: var(--clr-accent) !important;
+}
+.navbar-logo-icon {
+  height: 44px;
+  width: auto;
+  margin-right: var(--sp-2);
+}
+.footer-brand {
+  display: flex !important;
+  align-items: center;
+}
+.footer-logo-icon {
+  height: 36px;
+  width: auto;
+  margin-right: var(--sp-2);
 }
 
 /* Links de navegación */
@@ -400,6 +416,13 @@ a:focus {
   padding: var(--sp-8) !important;
   box-shadow: var(--shadow-md) !important;
   border: 1px solid rgba(0,0,0,0.04) !important;
+}
+.cta-logo {
+  display: block;
+  max-width: 170px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto var(--sp-5);
 }
 
 /* Cita en blockquote con borde dorado */
