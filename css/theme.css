@@ -1200,6 +1200,22 @@ a > img.whatsapp,
   background: var(--clr-primary) !important;
 }
 
+/* Carrusel de Altos del Valle: misma altura para todas las fotos,
+   cada una con su ancho natural (horizontales y verticales sin recortar) */
+.owl-carousel-valle .galeria-item {
+  padding: 0;
+}
+.owl-carousel-valle .galeria-item img {
+  width: auto;
+  max-width: none;
+  height: 360px;
+}
+@media (max-width: 767.98px) {
+  .owl-carousel-valle .galeria-item img {
+    height: 240px;
+  }
+}
+
 /* =====================================================
    15. HERO GALERÍA
    ===================================================== */
