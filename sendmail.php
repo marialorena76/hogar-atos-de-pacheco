@@ -19,7 +19,7 @@ if (empty($Nome) || empty($Email) || empty($Mensagem)) {
 $esValle = (strpos($assunt, '[Altos del Valle]') !== false);
 
 if ($esValle) {
-    $smtpHost     = 'mail.altosdelvalle.com.ar';
+    $smtpHost     = 'mail.hogaraltosdelvalle.com.ar';
     $smtpUsuario  = 'info@altosdelvalle.com.ar';
     $smtpClave    = 'B4$v=)pqOM.xRTgU';
     $emailDestino = 'info@altosdelvalle.com.ar';
