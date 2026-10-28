@@ -2,7 +2,6 @@
 // Suppress PHP errors from leaking into the AJAX response
 ini_set('display_errors', 0);
 error_reporting(0);
-// Clean any output buffers so stray errors don't corrupt the response
 ob_start();
 
 $Nome     = isset($_POST["name"])    ? strip_tags(trim($_POST["name"]))    : '';
@@ -14,6 +13,23 @@ if (empty($Nome) || empty($Email) || empty($Mensagem)) {
     ob_end_clean();
     echo 'error';
     exit;
+}
+
+// Detectar qué formulario envió (Altos del Valle vs Altos de Pacheco)
+$esValle = (strpos($assunt, '[Altos del Valle]') !== false);
+
+if ($esValle) {
+    $smtpHost     = 'mail.altosdelvalle.com.ar';
+    $smtpUsuario  = 'info@altosdelvalle.com.ar';
+    $smtpClave    = 'B4$v=)pqOM.xRTgU';
+    $emailDestino = 'info@altosdelvalle.com.ar';
+    $prefijo      = 'Hogar Altos del Valle | Web - ';
+} else {
+    $smtpHost     = 'mail.hogaraltosdepacheco.com.ar';
+    $smtpUsuario  = 'info@hogaraltosdepacheco.com.ar';
+    $smtpClave    = 'jZdqLoJ,f{';
+    $emailDestino = 'info@hogaraltosdepacheco.com.ar';
+    $prefijo      = 'Hogar Altos de Pacheco | Web - ';
 }
 
 $fields = array(
@@ -37,7 +53,7 @@ require_once("class.smtp.php");
 
 $error = '';
 
-function smtpmailer($de, $de_nome, $assunto, $corpo) {
+function smtpmailer($smtpHost, $smtpUsuario, $smtpClave, $emailDestino, $de, $de_nome, $asunto, $corpo) {
     global $error;
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -48,16 +64,16 @@ function smtpmailer($de, $de_nome, $assunto, $corpo) {
     $mail->isHTML(true);
     $mail->CharSet    = 'utf-8';
 
-    $mail->Host     = 'hogar00.ferozo.com';
-    $mail->Username = 'admin@hogaraltosdepacheco.com.ar';
-    $mail->Password = 'mlvOIM*8rI';
+    $mail->Host     = $smtpHost;
+    $mail->Username = $smtpUsuario;
+    $mail->Password = $smtpClave;
 
-    $mail->From     = $de;
+    $mail->From     = $smtpUsuario;
     $mail->FromName = $de_nome;
-    $mail->AddAddress('info@hogaraltosdepacheco.com.ar');
-    $mail->addCC('estefia@yahoo.com');
+    $mail->AddAddress($emailDestino);
+    $mail->addReplyTo($de, $de_nome);
 
-    $mail->Subject = $assunto;
+    $mail->Subject = $asunto;
     $mail->Body    = $corpo;
     $mail->AltBody = strip_tags($corpo);
 
@@ -69,7 +85,7 @@ function smtpmailer($de, $de_nome, $assunto, $corpo) {
     return true;
 }
 
-smtpmailer($Email, $Nome, 'Hogar Altos de Pacheco | Web - ' . $assunt, $emailTextHtml);
+smtpmailer($smtpHost, $smtpUsuario, $smtpClave, $emailDestino, $Email, $Nome, $prefijo . $assunt, $emailTextHtml);
 
 ob_end_clean();
 echo $error;
