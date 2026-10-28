@@ -20,9 +20,9 @@ $esValle = (strpos($assunt, '[Altos del Valle]') !== false);
 
 if ($esValle) {
     $smtpHost     = 'mail.hogaraltosdelvalle.com.ar';
-    $smtpUsuario  = 'info@altosdelvalle.com.ar';
+    $smtpUsuario  = 'info@hogaraltosdelvalle.com.ar';
     $smtpClave    = 'B4$v=)pqOM.xRTgU';
-    $emailDestino = 'info@altosdelvalle.com.ar';
+    $emailDestino = 'info@hogaraltosdelvalle.com.ar';
     $prefijo      = 'Hogar Altos del Valle | Web - ';
 } else {
     $smtpHost     = 'mail.hogaraltosdepacheco.com.ar';
