@@ -1373,6 +1373,21 @@ a > img.whatsapp,
   display: block;
   border: none;
 }
+/* Botones con texto largo: que salten de línea en celulares angostos */
+@media (max-width: 575.98px) {
+  .btn { white-space: normal; }
+}
+/* Videos propios: vertical (3:4) u horizontal (16:9), sin recortes */
+.valle-video-card.vertical video {
+  aspect-ratio: 3 / 4;
+  max-height: none;
+  object-fit: contain;
+}
+.valle-video-card.horizontal video {
+  aspect-ratio: 16 / 9;
+  max-height: none;
+  object-fit: contain;
+}
 
 /* Página Altos del Valle */
 .valle-video-principal {
@@ -1385,8 +1400,9 @@ a > img.whatsapp,
 }
 .valle-video-principal video {
   width: 100%;
+  aspect-ratio: 16 / 9;
   display: block;
-  max-height: 480px;
+  background: #000;
 }
 .valle-video-principal iframe {
   width: 100%;
