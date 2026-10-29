@@ -1,92 +1,132 @@
 <?php
-// Suppress PHP errors from leaking into the AJAX response
+/*
+ * Envío de los formularios de contacto (Altos de Pacheco y Altos del Valle).
+ *
+ * IMPORTANTE: las claves de las casillas de correo NO van en este archivo.
+ * Se leen de mail-config.php, que existe solo en el hosting y no se sube a GitHub
+ * (ver mail-config.example.php).
+ *
+ * Responde siempre en texto plano: "sent" si se envió, "error" si no.
+ * El detalle técnico de un fallo queda en el archivo error_log del hosting.
+ */
 ini_set('display_errors', 0);
 error_reporting(0);
-ob_start();
+header('Content-Type: text/plain; charset=utf-8');
 
-$Nome     = isset($_POST["name"])    ? strip_tags(trim($_POST["name"]))    : '';
-$Email    = isset($_POST["email"])   ? strip_tags(trim($_POST["email"]))   : '';
-$Mensagem = isset($_POST["message"]) ? strip_tags(trim($_POST["message"])) : '';
-$assunt   = isset($_POST["subject"]) ? strip_tags(trim($_POST["subject"])) : 'Consulta desde el sitio web';
-
-if (empty($Nome) || empty($Email) || empty($Mensagem)) {
-    ob_end_clean();
-    echo 'error';
+function responder($texto) {
+    echo $texto;
     exit;
 }
 
-// Detectar qué formulario envió (Altos del Valle vs Altos de Pacheco)
-$esValle = (strpos($assunt, '[Altos del Valle]') !== false);
+function limpiar($valor, $maximo) {
+    $valor = trim(strip_tags((string) $valor));
+    if (function_exists('mb_substr')) {
+        return mb_substr($valor, 0, $maximo, 'UTF-8');
+    }
+    return substr($valor, 0, $maximo);
+}
+
+if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
+    responder('error');
+}
+
+// --- Configuración (claves) ---
+$archivoConfig = dirname(__FILE__) . '/mail-config.php';
+if (!is_file($archivoConfig)) {
+    error_log('sendmail.php: falta el archivo mail-config.php');
+    responder('error');
+}
+$config = require $archivoConfig;
+
+// --- Datos del formulario ---
+$nombre  = limpiar(isset($_POST['name'])    ? $_POST['name']    : '', 120);
+$email   = limpiar(isset($_POST['email'])   ? $_POST['email']   : '', 160);
+$asunto  = limpiar(isset($_POST['subject']) ? $_POST['subject'] : '', 200);
+$mensaje = limpiar(isset($_POST['message']) ? $_POST['message'] : '', 5000);
+
+if ($nombre === '' || $mensaje === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    responder('error');
+}
+
+// --- ¿De qué sitio viene? El formulario de Altos del Valle marca el asunto con "[Altos del Valle]"
+// y en ese formulario el campo "subject" es el teléfono.
+$etiquetaValle = '[Altos del Valle]';
+$esValle = (strpos($asunto, $etiquetaValle) !== false);
+$cuenta = $esValle ? $config['valle'] : $config['pacheco'];
 
 if ($esValle) {
-    $smtpHost     = 'mail.hogaraltosdelvalle.com.ar';
-    $smtpUsuario  = 'info@hogaraltosdelvalle.com.ar';
-    $smtpClave    = 'B4$v=)pqOM.xRTgU';
-    $emailDestino = 'info@hogaraltosdelvalle.com.ar';
-    $prefijo      = 'Hogar Altos del Valle | Web - ';
+    $telefono = trim(str_replace($etiquetaValle, '', $asunto));
+    $asuntoMail = 'Consulta desde el sitio' . ($telefono !== '' ? ' - Tel. ' . $telefono : '');
 } else {
-    $smtpHost     = 'mail.hogaraltosdepacheco.com.ar';
-    $smtpUsuario  = 'info@hogaraltosdepacheco.com.ar';
-    $smtpClave    = 'jZdqLoJ,f{';
-    $emailDestino = 'info@hogaraltosdepacheco.com.ar';
-    $prefijo      = 'Hogar Altos de Pacheco | Web - ';
+    $telefono = '';
+    $asuntoMail = ($asunto !== '') ? $asunto : 'Consulta desde el sitio web';
 }
 
-$fields = array(
-    'name'    => 'Nombre:',
-    'email'   => 'Email:',
-    'subject' => 'Asunto:',
-    'message' => 'Mensaje:',
-);
-
-$emailTextHtml  = "<h1>Nuevo mensaje desde el formulario de contacto.</h1><hr>";
-$emailTextHtml .= "<table cellpadding='6' cellspacing='0'>";
-foreach ($_POST as $key => $value) {
-    if (isset($fields[$key])) {
-        $emailTextHtml .= "<tr><th style='text-align:left;padding-right:12px'>{$fields[$key]}</th><td>" . htmlspecialchars($value) . "</td></tr>";
-    }
+// --- Cuerpo del mail ---
+$filas = array('Nombre:' => $nombre, 'Email:' => $email);
+if ($esValle) {
+    $filas['Teléfono:'] = ($telefono !== '') ? $telefono : '(no indicó)';
+} else {
+    $filas['Asunto:'] = $asuntoMail;
 }
-$emailTextHtml .= "</table><hr>";
+$filas['Mensaje:'] = $mensaje;
 
-require_once("class.phpmailer.php");
-require_once("class.smtp.php");
+$cuerpo = '<h2>Nuevo mensaje desde el formulario de contacto</h2><hr>';
+$cuerpo .= '<table cellpadding="6" cellspacing="0">';
+foreach ($filas as $etiqueta => $valor) {
+    $cuerpo .= '<tr><th style="text-align:left;vertical-align:top;padding-right:12px">' . $etiqueta
+            . '</th><td>' . nl2br(htmlspecialchars($valor, ENT_QUOTES, 'UTF-8')) . '</td></tr>';
+}
+$cuerpo .= '</table><hr>';
 
-$error = '';
+// --- Envío por SMTP ---
+require_once dirname(__FILE__) . '/class.phpmailer.php';
+require_once dirname(__FILE__) . '/class.smtp.php';
 
-function smtpmailer($smtpHost, $smtpUsuario, $smtpClave, $emailDestino, $de, $de_nome, $asunto, $corpo) {
-    global $error;
+$hosts = isset($cuenta['hosts']) ? $cuenta['hosts'] : array('localhost');
+$enviado = false;
+
+foreach ($hosts as $host) {
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPDebug  = 0;
-    $mail->SMTPAuth   = true;
-    $mail->SMTPSecure = 'ssl';
+    $mail->Timeout    = 15;
+    $mail->Host       = $host;
     $mail->Port       = 465;
-    $mail->isHTML(true);
+    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $cuenta['user'];
+    $mail->Password   = $cuenta['pass'];
     $mail->CharSet    = 'utf-8';
+    $mail->isHTML(true);
 
-    $mail->Host     = $smtpHost;
-    $mail->Username = $smtpUsuario;
-    $mail->Password = $smtpClave;
-
-    $mail->From     = $smtpUsuario;
-    $mail->FromName = $de_nome;
-    $mail->AddAddress($emailDestino);
-    $mail->addReplyTo($de, $de_nome);
-
-    $mail->Subject = $asunto;
-    $mail->Body    = $corpo;
-    $mail->AltBody = strip_tags($corpo);
-
-    if (!$mail->Send()) {
-        $error = 'error: ' . $mail->ErrorInfo;
-        return false;
+    // Dentro del mismo servidor ("localhost") el certificado no coincide con el nombre: no se verifica.
+    // Para cualquier otro servidor sí se verifica el certificado.
+    if ($host === 'localhost' || $host === '127.0.0.1') {
+        $mail->SMTPOptions = array('ssl' => array(
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+            'allow_self_signed' => true,
+        ));
     }
-    $error = 'sent';
-    return true;
+
+    $mail->From     = $cuenta['user'];
+    $mail->FromName = 'Web ' . ($esValle ? 'Altos del Valle' : 'Altos de Pacheco');
+    $mail->AddAddress($cuenta['to']);
+    if (!empty($cuenta['cc'])) {
+        $mail->addCC($cuenta['cc']);
+    }
+    $mail->addReplyTo($email, $nombre);
+
+    $mail->Subject = $cuenta['prefix'] . $asuntoMail;
+    $mail->Body    = $cuerpo;
+    $mail->AltBody = strip_tags(str_replace(array('</tr>', '<br />'), "\n", $cuerpo));
+
+    if ($mail->Send()) {
+        $enviado = true;
+        break;
+    }
+    error_log('sendmail.php: fallo con ' . $host . ' -> ' . $mail->ErrorInfo);
 }
 
-smtpmailer($smtpHost, $smtpUsuario, $smtpClave, $emailDestino, $Email, $Nome, $prefijo . $assunt, $emailTextHtml);
-
-ob_end_clean();
-echo $error;
-?>
+responder($enviado ? 'sent' : 'error');

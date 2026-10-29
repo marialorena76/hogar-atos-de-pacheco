@@ -111,7 +111,7 @@
                   ¡Gracias! Nos pondremos en contacto pronto.
                 </div>
                 <div id="mail-fail-valle" class="error" style="display:none">
-                  No se pudo enviar. Escribinos a <a href="mailto:info@hogaraltosdepacheco.com.ar">info@hogaraltosdepacheco.com.ar</a>
+                  No se pudo enviar. Escribinos a <a href="mailto:info@hogaraltosdelvalle.com.ar">info@hogaraltosdelvalle.com.ar</a>
                 </div>
                 <div>
                   <input type="submit" id="contact-submit-valle" class="btn btn-primary" value="Enviar consulta">
@@ -194,7 +194,7 @@
                 <span class="icon-paper-plane"></span>
               </div>
               <h3 class="mb-4">E-mail</h3>
-              <p><a href="mailto:info@hogaraltosdepacheco.com.ar">info@hogaraltosdepacheco.com.ar</a></p>
+              <p><a href="mailto:info@hogaraltosdelvalle.com.ar">info@hogaraltosdelvalle.com.ar</a></p>
             </div>
           </div>
         </div>
@@ -288,6 +288,46 @@
           autoplayTimeout: 3500,
           autoplayHoverPause: true,
           navText: ['&#8592;','&#8594;']
+        });
+      });
+    </script>
+    <script>
+      // Envío del formulario de Altos del Valle (sin recargar la página)
+      $(function(){
+        $('#contact-form-valle').on('submit', function(e){
+          e.preventDefault();
+          var $btn    = $('#contact-submit-valle');
+          var name    = $('#name-valle').val().trim();
+          var email   = $('#email-valle').val().trim();
+          var phone   = $('#subject-valle').val().trim();
+          var message = $('#message-valle').val().trim();
+          if(!name || !email || !message){
+            $('#mail-fail-valle').text('Completá nombre, e-mail y consulta.').fadeIn();
+            return;
+          }
+          $btn.prop('disabled', true).val('Enviando...');
+          $.ajax({
+            url: 'sendmail.php',
+            type: 'POST',
+            data: { name: name, email: email, subject: '[Altos del Valle] ' + phone, message: message },
+            success: function(response){
+              if($.trim(response) === 'sent'){
+                $('#mail-fail-valle').hide();
+                $('#mail-success-valle').fadeIn();
+                $('#contact-form-valle')[0].reset();
+              } else {
+                $('#mail-success-valle').hide();
+                $('#mail-fail-valle').fadeIn();
+              }
+            },
+            error: function(){
+              $('#mail-success-valle').hide();
+              $('#mail-fail-valle').fadeIn();
+            },
+            complete: function(){
+              $btn.prop('disabled', false).val('Enviar consulta');
+            }
+          });
         });
       });
     </script>

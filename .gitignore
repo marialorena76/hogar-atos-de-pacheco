@@ -13,3 +13,7 @@ _old2019.zip
 # Sistema
 .DS_Store
 .claude/
+
+# Claves de correo: solo existen en el hosting
+mail-config.php
+error_log
