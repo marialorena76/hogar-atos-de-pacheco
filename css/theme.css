@@ -1373,6 +1373,23 @@ a > img.whatsapp,
   display: block;
   border: none;
 }
+/* Video vertical 9:16 (celular): ancho acotado y sin recortes */
+.valle-video-card.tall {
+  max-width: 340px;
+  margin: 0 auto;
+}
+.valle-video-card.tall video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 9 / 16;
+  max-height: none;
+  object-fit: contain;
+}
+.valle-recorrido .btn { margin-top: 1.5rem; }
+@media (min-width: 768px) {
+  .valle-recorrido .galeria-divider { margin-left: 0; }
+}
+
 /* Botones con texto largo: que salten de línea en celulares angostos */
 @media (max-width: 575.98px) {
   .btn { white-space: normal; }
